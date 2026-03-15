@@ -1,0 +1,17 @@
+{
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch MariaDB - Vector",
+                "type": "codelldb",
+                "request": "launch",
+		"program": "/app/build/sql/mariadbd/",
+		"args": ["--defaults-file=${env:HOME}/mariadb.cnf", "--user=root"],
+		"cwd": "${workspaceFolder}",
+		"sourceMap": { "/app/code" : "/mnt/code"},
+		"terminal": "integrated",
+		"stopOnEntry": false
+            }
+            
+	]
+}
