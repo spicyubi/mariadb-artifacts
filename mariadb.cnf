@@ -1,0 +1,5 @@
+[client-server]
+socket = /run/mariadb/mariadb.sock
+
+[mariadb]
+datadir = /var/lib/mariadb/data
