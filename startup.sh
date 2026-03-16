@@ -10,7 +10,7 @@ if [ "$2" = "init" ]; then
 	cmake --build .
 	printf "\nBuild complete:\n"
 	printf "\nGenerating System Tables:\n"
-	./scripts/mariadb-install-db --srcdir=../code --defaults-file=~/mariadb.cnf --user=root
+	./scripts/mariadb-install-db --srcdir=/mnt/code --defaults-file=~/mariadb.cnf --user=root
 	printf "\nGenerating System Tables Complete\n"
 else
 	if [ "$1" = "debug" ]; then

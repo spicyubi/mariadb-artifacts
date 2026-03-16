@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 COPY ./ ./
 WORKDIR /app/build
 COPY ./mariadb.cnf /root/mariadb.cnf
-RUN mkdir /run/mariadb/ /var/lib/mariadb/
+RUN mkdir -p /run/mariadb/ /var/lib/mariadb/
 COPY ./startup.sh ./startup.sh
 RUN chmod +x ./startup.sh
 RUN ./startup.sh ${build_type} init
