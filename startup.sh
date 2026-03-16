@@ -3,9 +3,9 @@ if [ "$2" = "init" ]; then
 	printf "\nInit script:\n"
 	if [ "$1" = "debug" ]; then
 		printf "\nDEBUG\n"
-	    cmake ../code -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
+	    cmake /mnt/code -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
 	else
-	    cmake ../code -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
+	    cmake /mnt/code -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
 	fi
 	cmake --build .
 	printf "\nBuild complete:\n"
@@ -15,10 +15,10 @@ if [ "$2" = "init" ]; then
 else
 	if [ "$1" = "debug" ]; then
 	    printf "\nConfiguring debug build . . .\n"
-	    time cmake ../code -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
+	    time cmake /mnt/code -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
 	else
 	    printf "\nConfiguring standard build . . .\n"
-	    time cmake ../code -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
+	    time cmake /mnt/code -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja
 	fi
 	printf "\nCompiling Build:\n"
 	time cmake --build .
