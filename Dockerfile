@@ -10,7 +10,7 @@ RUN sed -i 's/^Types: deb$/Types: deb deb-src/g' /etc/apt/sources.list.d/debian.
 WORKDIR /root/nvim/
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    curl ca-certificates git clangd ripgrep
+    curl ca-certificates git clangd ripgrep wl-clipboard
 RUN curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
 RUN chmod u+x nvim-linux-x86_64.appimage && ./nvim-linux-x86_64.appimage --appimage-extract && ln -s /root/nvim/squashfs-root/usr/bin/nvim /usr/bin/nvim
 WORKDIR /root/.config/
@@ -41,4 +41,3 @@ RUN rm -rf /mnt/code/ && ln -s /mnt/code /app/code && git config --global --add 
 WORKDIR /app/build
 ENV build_type=${build_type}
 CMD ["sleep", "infinity"]
-# CMD ./startup.sh ${build_type}

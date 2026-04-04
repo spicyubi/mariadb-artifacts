@@ -24,6 +24,4 @@ else
 	time cmake --build .
 	printf "\nCompile Complete\n"
 	./sql/mariadbd -V
-	printf "\nContainer up for ad-hoc dev purposes . . .\n"
-	sleep infinity
 fi

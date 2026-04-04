@@ -2,13 +2,44 @@
         "version": "0.2.0",
         "configurations": [
             {
-                "name": "Launch MariaDB",
+                "name": "Launch MariaDB - Test Vector - Create Table",
                 "type": "gdb",
                 "request": "launch",
 		"program": "/app/build/sql/mariadbd",
-		"args": ["--defaults-file=${env:HOME}/mariadb.cnf", "--user=root"],
+		"args": ["--defaults-file=${env:HOME}/mariadb.cnf", "--user=root", "--init-file=/mnt/code/tmp/test-vector-create.sql", "--debug=d,info,error,query:o,/tmp/mariadb.trace"],
 		"cwd": "${workspaceFolder}",
-		"stopOnEntry": true
+		"stopOnEntry": false,
+		"stopAtBeginningOfMainSubprogram": true
+            },
+            {
+                "name": "Launch MariaDB - Test Vector - Insert Table",
+                "type": "gdb",
+                "request": "launch",
+		"program": "/app/build/sql/mariadbd",
+		"args": ["--defaults-file=${env:HOME}/mariadb.cnf", "--user=root", "--init-file=/mnt/code/tmp/test-vector-insert.sql"],
+		"cwd": "${workspaceFolder}",
+		"stopOnEntry": false,
+		"stopAtBeginningOfMainSubprogram": true
+            },
+            {
+                "name": "Launch MariaDB - Test Vector - Alter Table",
+                "type": "gdb",
+                "request": "launch",
+		"program": "/app/build/sql/mariadbd",
+		"args": ["--defaults-file=${env:HOME}/mariadb.cnf", "--user=root", "--init-file=/mnt/code/tmp/vector-alter-test.sql"],
+		"cwd": "${workspaceFolder}",
+		"stopOnEntry": false,
+		"stopAtBeginningOfMainSubprogram": true
+            },
+	    {
+                "name": "Launch MariaDB - Test Vector - Create Table with NULL",
+                "type": "gdb",
+                "request": "launch",
+		"program": "/app/build/sql/mariadbd",
+		"args": ["--defaults-file=${env:HOME}/mariadb.cnf", "--user=root", "--init-file=/mnt/code/tmp/vector-null-create-test.sql"],
+		"cwd": "${workspaceFolder}",
+		"stopOnEntry": false,
+		"stopAtBeginningOfMainSubprogram": true
             }
 	]
 }
