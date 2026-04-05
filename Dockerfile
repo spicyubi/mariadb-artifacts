@@ -15,10 +15,6 @@ RUN curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-lin
 RUN chmod u+x nvim-linux-x86_64.appimage && ./nvim-linux-x86_64.appimage --appimage-extract && ln -s /root/nvim/squashfs-root/usr/bin/nvim /usr/bin/nvim
 WORKDIR /root/.config/
 RUN ln -s /mnt/.config/nvim/ /root/.config/
-# WORKDIR /root/codelldb/
-# RUN curl -LO https://github.com/vadimcn/codelldb/releases/download/v1.12.1/codelldb-linux-x64.vsix && unzip codelldb-linux-x64.vsix
-# RUN chmod u+x /root/codelldb/extension/adapter/codelldb
-# ENV PATH="/root/codelldb/extension/adapter/:$PATH"
 
 # MariaDB init Setup
 WORKDIR /mnt/code

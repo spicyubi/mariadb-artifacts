@@ -40,6 +40,16 @@
 		"cwd": "${workspaceFolder}",
 		"stopOnEntry": false,
 		"stopAtBeginningOfMainSubprogram": true
-            }
+            },
+	    {
+                "name": "Launch MariaDB - Test Vector - SELECT",
+                "type": "gdb",
+                "request": "launch",
+		"program": "/app/build/sql/mariadbd",
+		"args": ["--defaults-file=${env:HOME}/mariadb.cnf", "--user=root", "--init-file=/mnt/code/tmp/vector-select-test.sql"],
+		"cwd": "${workspaceFolder}",
+		"stopOnEntry": false,
+		"stopAtBeginningOfMainSubprogram": true
+	    }
 	]
 }
